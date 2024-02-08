@@ -77,3 +77,11 @@ movies = [
 "category": "Romance"
 }
 ]
+
+def score(x):
+    if movies[x]["imdb"] > 5.5:
+        return True
+    else:
+        return False
+num = int(input())
+print(score(num))
