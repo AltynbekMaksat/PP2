@@ -31,17 +31,11 @@ print(without)
 
 # ex 4
 
-def date_difference_in_seconds(date1, date2):
-    difference = abs(date2 - date1)  
-    return difference.total_seconds()  
+from datetime import datetime
 
-date_format = "%Y-%m-%d %H:%M:%S"  
-date1_str = input("Enter the first date (YYYY-MM-DD HH:MM:SS): ")
-date2_str = input("Enter the second date (YYYY-MM-DD HH:MM:SS): ")
+current_data = datetime.now()
+my_data = datetime(2024, 8, 11, 15, 1, 0)
 
-date1 = datetime.datetime.strptime(date1_str, date_format)
-date2 = datetime.datetime.strptime(date2_str, date_format)
+difference_sec = (current_data - my_data).total_seconds()
 
-difference_seconds = date_difference_in_seconds(date1, date2)
-
-print("Difference between the two dates in seconds:", difference_seconds)
+print(difference_sec)
