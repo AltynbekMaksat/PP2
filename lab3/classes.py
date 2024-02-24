@@ -39,7 +39,7 @@ square = Square(5)
 square.area()
 
 # ex 3
-
+ 
 class Shape:
     def __init__(self):
         pass
