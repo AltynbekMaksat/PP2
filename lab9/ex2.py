@@ -34,8 +34,7 @@ game_score_rect = game_score_text.get_rect()
 game_score_rect.center = (210, 20)
 
 #Catching sound
-collision_sound = pygame.mixer.Sound('music/catch.mp3')
-
+collision_sound = pygame.mixer.Sound('catch.mp3')
 
 def detect_collision(dx, dy, ball, rect):
     if dx > 0:
@@ -67,7 +66,7 @@ color_list = [(random.randrange(0, 255), random.randrange(0, 1),
                random.randrange(0, 255)) for _ in range(len(block_list))]
 
 # Define the number of unbreakable and bonus bricks
-num_unbreakable_bricks = 10
+num_unbreakable_bricks = 0
 num_bonus_bricks = 5
 
 # Randomly select and replace 'normal' bricks with 'unbreakable' bricks
@@ -252,6 +251,11 @@ while not done:
             dx, dy = detect_collision(dx, dy, ball, hitRect)
 
     #Game score
+    
+    
+    if game_score>=2:
+        paddleW/=2
+        
     game_score_text = game_score_fonts.render(
         f'Your game score is: {game_score}', True, (255, 255, 255))
     screen.blit(game_score_text, game_score_rect)

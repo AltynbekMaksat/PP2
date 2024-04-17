@@ -67,7 +67,7 @@ def draw_menu():
         equilateral_triangle_brush, rhombus_brush
     ]
 
-    eraser = pygame.image.load("images/eraser.png")
+    eraser = pygame.image.load("eraser.png")
     eraser_rect = eraser.get_rect(topleft=(18, 320))
     eraser_rect.width = eraser_rect.height = 25
     screen.blit(eraser, [18, 320, 25, 25])

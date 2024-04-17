@@ -31,7 +31,6 @@ N_COINS = 5  # Number of coins to increase enemy speed
 font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
-
 background = pygame.image.load("AnimatedStreet.png")
 
 #Create a white screen
@@ -143,6 +142,9 @@ while True:
         # pygame.mixer.Sound('').play()
         COINS += C1.weight
         COINS2 += C1.weight
+        
+        if COINS2>=3:
+            SPEED2*=10
 
         # Increase enemy speed when player earns N coins
         if COINS2 > 10 and COINS != 0:
